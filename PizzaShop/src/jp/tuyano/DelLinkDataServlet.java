@@ -25,7 +25,7 @@ public class DelLinkDataServlet extends HttpServlet {
         long id = Long.parseLong(req.getParameter("id"));
         PersistenceManagerFactory factory = PMF.get();
         PersistenceManager manager = factory.getPersistenceManager();
-        LinkData data = (LinkData)manager.getObjectById(LinkData.class,id);
+        LinkData2 data = (LinkData2)manager.getObjectById(LinkData2.class,id);
         manager.deletePersistent(data);
         manager.close();
         resp.sendRedirect("/history.html");

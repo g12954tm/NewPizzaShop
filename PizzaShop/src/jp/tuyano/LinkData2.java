@@ -1,12 +1,11 @@
 package jp.tuyano;
  
-import java.net.URL;
 import java.util.Date;
  
 import javax.jdo.annotations.*;
  
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
-public class LinkData {
+public class LinkData2 {
     @PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Long id;
@@ -29,7 +28,7 @@ public class LinkData {
     @Persistent
     private Date datetime;
  
-    public LinkData(String title,String address, String phone, String mail, String comment, Date datetime) {
+    public LinkData2(String title,String address, String phone, String mail, String comment, Date datetime) {
         super();
         this.username = title;
         this.address = address;

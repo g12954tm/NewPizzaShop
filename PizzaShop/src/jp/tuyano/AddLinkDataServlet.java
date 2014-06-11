@@ -30,7 +30,7 @@ public class AddLinkDataServlet extends HttpServlet {
         String mail = req.getParameter("mail");
         String comment = req.getParameter("comment");
         Date date = Calendar.getInstance().getTime();
-        LinkData data = new LinkData(title,address,phone,mail,comment,date);
+        LinkData2 data = new LinkData2(title,address,phone,mail,comment,date);
         PersistenceManagerFactory factory = PMF.get();
         PersistenceManager manager = factory.getPersistenceManager();
         try {

@@ -18,22 +18,22 @@ public class MygaeServlet extends HttpServlet {
         req.setCharacterEncoding("utf-8");
         String param1 = req.getParameter("id");
         PrintWriter out = resp.getWriter();
-        List<LinkData> list = null;
+        List<LinkData2> list = null;
         if (param1 == null || param1 ==""){
-            String query = "select from " + LinkData.class.getName();
+            String query = "select from " + LinkData2.class.getName();
             try {
-                list = (List<LinkData>)manager.newQuery(query).execute();
+                list = (List<LinkData2>)manager.newQuery(query).execute();
             } catch(JDOObjectNotFoundException e){}
         } else {
             try {
-                LinkData data = (LinkData)manager.getObjectById(LinkData.class,Long.parseLong(param1));
+                LinkData2 data = (LinkData2)manager.getObjectById(LinkData2.class,Long.parseLong(param1));
                 list = new ArrayList();
                 list.add(data);
             } catch(JDOObjectNotFoundException e){}
         }
         String res = "[";
         if (list != null){
-            for(LinkData data:list){
+            for(LinkData2 data:list){
                 res += "{id:" + data.getId() + ",address:'" + data.getAddress() + "',title:'" +
                     data.getTitle() + "',date:'" + data.getDatetime() +
                     "',phone:'"+ data.getPhone() +
